@@ -1,0 +1,57 @@
+html, body{
+  width: 100%;
+  height: 100%;
+  .centerElement{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .mainContainer{
+    height: 60%;
+    width: 30%;
+    min-height: 400px;
+    min-width: 300px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    .displaySection{
+      margin: 5px;
+      height: 22%;
+      background: #fff;
+      //box-sizing: content-box;
+      input[type=text]{
+        width: 96%;
+        margin: 1% 1.5%;
+        text-align: right;
+        height: 35%;
+        font-size: 20px;
+      }
+      .inputResult{
+        border: none;
+      }
+      .inputValues{
+        border-radius: 5px;
+        border: 1px solid #cccccc;
+      }
+    }
+    .buttonSection{
+      margin: 5px;
+      height: 75%;
+      .buttonTable{
+        width: 100%;
+        height: 100%;
+        tr td{
+          button{
+            height: 100%;
+            width: 95%;
+            background: rgba(232, 232, 232, 0.81);
+            border: 1px solid #cccccc;
+            font-size: 22px;
+            &:hover{
+              background: #cccccc;
+            }
+          }
+        }
+      }
+    }
+  }
+}

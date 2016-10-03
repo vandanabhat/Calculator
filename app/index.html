@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="calculator" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="calculator" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="calculator" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="calculator" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Calculator</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div ng-controller="calculationController" class="mainContainer centerElement">
+    <div class="displaySection">
+        <input type="text" name="result" class="inputResult" ng-model="result" id='result'  disabled calculate>
+        <input type="text" name="enterValues" class="inputValues" ng-model="calculationDisplay" evaluate-pattern>
+        <!--<span>{{calculationDisplay}}</span>-->
+    </div>
+    <div class="buttonSection">
+        <table class="buttonTable">
+            <tr>
+                <td rowspan="2"><button value="c" ng-click="init()">C</button></td>
+                <td><button value="/" calculate>/</button></td>
+                <td><button value=9 calculate>9</button></td>
+                <td><button value=8 calculate>8</button></td>
+                <td><button value=7 calculate>7</button></td>
+            </tr>
+            <tr>
+                <td><button value="*" calculate>*</button></td>
+                <td><button value=6 calculate>6</button></td>
+                <td><button value=5 calculate>5</button></td>
+                <td><button value=4 calculate>4</button></td>
+            </tr>
+            <tr>
+                <td rowspan="2"><button ng-click="onShowResult()" id="equalTo">=</button></td>
+                <td><button value="-" calculate>-</button></td>
+                <td><button value=3 calculate>3</button></td>
+                <td><button value=2 calculate>2</button></td>
+                <td><button value=1 calculate>1</button></td>
+            </tr>
+            <tr>
+                <td><button value="+" id="plus" calculate>+</button></td>
+                <td><button value="." calculate>.</button></td>
+                <td colspan="2"><button value=0 calculate>0</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="app.js"></script>
+
+<script src="components/calculate.js"></script>
+<!-- controllers -->
+
+<script src="controller/calculationController.js"></script>
+</body>
+</html>

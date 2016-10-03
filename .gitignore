@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+.DS_Store
+.gitignore
+.idea/
+LICENSE
+#e2e-tests/
+#karma.conf.js
+#package.json
