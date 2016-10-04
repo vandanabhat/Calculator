@@ -7,8 +7,6 @@ angular.module('calculator').controller('calculationController', ['$scope', '$ti
             calculationArr: [],
             finalResult: 0
         };
-    $scope.inputRegex = /[0-9]*[+\-*\/.]+/;
-
 
     var operation = function (num1, opr, num2) {
         var ans = 0;
@@ -53,7 +51,6 @@ angular.module('calculator').controller('calculationController', ['$scope', '$ti
                 resultsObj.finalResult = resultsObj.calculationArr[i++];
                 while (i < len) {
                     resultsObj.finalResult = operation(resultsObj.finalResult, resultsObj.calculationArr[i++], resultsObj.calculationArr[i++]);
-                    //i += 3;
                 }
             }
         $timeout(function () {
@@ -114,18 +111,18 @@ angular.module('calculator').controller('calculationController', ['$scope', '$ti
                 $scope.result = 'Ans';
                 resultsObj.inputArr = [];
             }else {
-                if (/\.{1}/.test(resultsObj.calculationArr[len - 1])) {// check for . in number if yes convert it to float
-                    //resultsObj.calculationArr[len - 1] = parseFloat(resultsObj.calculationArr[len - 1] + input);
+                // check for . in number if yes convert it to float
+                if (/\.{1}/.test(resultsObj.calculationArr[len - 1])) {
                     resultsObj.calculationArr[len - 1] = (resultsObj.calculationArr[len - 1] + input);
 
                 } else {
-                    //resultsObj.calculationArr[len - 1] = resultsObj.calculationArr[len - 1] * 10 + parseInt(input);
                     resultsObj.calculationArr[len - 1] = resultsObj.calculationArr[len - 1]  + (input);
                 }
             }
         }else if (input == '.') {
             if (len == 0 || ( pattern.test(resultsObj.calculationArr[len - 1]) && isNaN(resultsObj.calculationArr[len - 1]))) {
-                if(len > 2 && pattern.test(resultsObj.calculationArr[len - 2])){// in case of 5 * -.345
+                if( (len > 2 && pattern.test(resultsObj.calculationArr[len - 2]))// in case of 5 * -.345
+                    || (len == 1 && resultsObj.calculationArr[0] == '-')){//if first number is -ve float
                     resultsObj.calculationArr[len - 1] = resultsObj.calculationArr[len - 1] + "0" +input;
                 }else {
                     resultsObj.calculationArr.push(input);
@@ -144,6 +141,3 @@ angular.module('calculator').controller('calculationController', ['$scope', '$ti
 }]);
 
 
-//Known issues
-
-//1. Wrong decimal results

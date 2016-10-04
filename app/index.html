@@ -15,9 +15,8 @@
 
 <div ng-controller="calculationController" class="mainContainer centerElement">
     <div class="displaySection">
-        <input type="text" name="result" class="inputResult" ng-model="result" id='result'  disabled calculate>
+        <input type="text" name="result" class="inputResult" ng-model="result" id='result'  disabled>
         <input type="text" name="enterValues" class="inputValues" ng-model="calculationDisplay" evaluate-pattern>
-        <!--<span>{{calculationDisplay}}</span>-->
     </div>
     <div class="buttonSection">
         <table class="buttonTable">
@@ -49,15 +48,12 @@
         </table>
     </div>
 </div>
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="app.js"></script>
 
+<script src="bower_components/angular/angular.js"></script>
+<script src="app.js"></script>
+<!--component-->
 <script src="components/calculate.js"></script>
 <!-- controllers -->
-
 <script src="controller/calculationController.js"></script>
 </body>
 </html>
