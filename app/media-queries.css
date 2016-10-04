@@ -1,0 +1,6 @@
+@media (max-width: 535px) {
+  #mainContainerID {
+    width: 90%;
+    height: 90%;
+  }
+}
