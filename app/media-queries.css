@@ -1,0 +1,9 @@
+@media (max-width: 535px) {
+  #mainContainerID {
+    width: 90%;
+    height: 90%;
+  }
+  #mainContainerID .displaySection input[type=text] {
+    width: 91%;
+  }
+}

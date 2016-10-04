@@ -10,10 +10,11 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="media-queries.css">
 </head>
 <body>
 
-<div ng-controller="calculationController" class="mainContainer centerElement">
+<div ng-controller="calculationController" class="mainContainer centerElement" id="mainContainerID">
     <div class="displaySection">
         <input type="text" name="result" class="inputResult" ng-model="result" id='result'  disabled>
         <input type="text" name="enterValues" class="inputValues" ng-model="calculationDisplay" evaluate-pattern>

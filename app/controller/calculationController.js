@@ -8,6 +8,17 @@ angular.module('calculator').controller('calculationController', ['$scope', '$ti
             finalResult: 0
         };
 
+    $scope.init = function () {
+        $scope.calculationDisplay = 0;
+        $scope.result = 'Ans';
+        resultsObj.calculationArr = [];
+        resultsObj.inputArr = [];
+    };
+    /**
+     * Executes when = is clicked or enter is press
+     * @param num,string,num
+     * @returns answers
+     */
     var operation = function (num1, opr, num2) {
         var ans = 0;
         switch (opr) {
@@ -27,14 +38,13 @@ angular.module('calculator').controller('calculationController', ['$scope', '$ti
         return ans;
     };
 
-    $scope.init = function () {
-        $scope.calculationDisplay = 0;
-        $scope.result = 'Ans';
-        resultsObj.calculationArr = [];
-        resultsObj.inputArr = [];
-    };
+    /**
+     * Executes when = is clicked or enter is press
+     * @param
+     * @returns calculates results and displays
+     */
 
-    $scope.onShowResult = function () { //on "=" click
+    $scope.onShowResult = function () {
         var len = resultsObj.calculationArr.length;
 
         if(len == 1 ){
@@ -67,6 +77,11 @@ angular.module('calculator').controller('calculationController', ['$scope', '$ti
         });
     };
 
+/**
+ * Executes when any button on calculator is pressed except =
+ * @param data
+ * @returns pushes data into array based on its type
+ */
     $scope.calculatedResult = function (input) {
         var operator = false,
             len = resultsObj.calculationArr.length,

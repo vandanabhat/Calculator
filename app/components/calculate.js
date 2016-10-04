@@ -18,6 +18,9 @@ angular.module('calculator').directive('calculate',['$timeout', function ($timeo
 }]).directive('evaluatePattern',[function () { //this directive will accepts only 0-9, . and [+/-*].
     return{
         restrict:'A',
+        scope: {
+            ngModel:'='
+        },
         link: function (scope,elm,attr,ctrl) {
             elm.bind("keydown", function (event) {
                 if (   (event.keyCode >= 48 && event.keyCode <= 57)
