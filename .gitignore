@@ -3,6 +3,6 @@
 .gitignore
 .idea/
 LICENSE
-#e2e-tests/
+#test-cases/
 #karma.conf.js
 #package.json
